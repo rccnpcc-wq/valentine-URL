@@ -381,7 +381,7 @@
             
             clickCount++;
             
-            // Funny messages
+            // More fun and playful messages
             const messages = [
                 "Not sure",
                 "Hmm 🤔",
@@ -391,13 +391,35 @@
                 "You know you want to! 💕",
                 "Just click YES! 😉",
                 "Stop running away! 🏃",
-                "I'm not going anywhere 💘"
+                "I'm not going anywhere 💘",
+                "Running away won't help 😂",
+                "Face it... YES! 🎯",
+                "Don't be shy 💗",
+                "You're making this fun! 😆",
+                "Tap YES, I dare you! 🔥",
+                "My feelings are growing 📈",
+                "This is getting interesting 👀",
+                "Almost there... 😏",
+                "Go on, make me happy 🥺",
+                "You can do it! 💪",
+                "The answer is YES 🎁",
+                "STOP RUNNING! 😹",
+                "Just... yes... please? 🙏",
+                "I believe in you! 💫"
             ];
             
             if (clickCount > 0 && clickCount < messages.length) {
                 noBtn.textContent = messages[clickCount];
             } else if (clickCount >= messages.length) {
-                noBtn.textContent = "Say YES! 🥺";
+                // Cycle back or show special message
+                const specialMessages = [
+                    "Say YES already! 😆",
+                    "Okay you got me, click YES! 💕",
+                    "I'm stubborn too! 😤",
+                    "Why are you like this? 🤪",
+                    "FINE, just click YES!"
+                ];
+                noBtn.textContent = specialMessages[Math.floor(Math.random() * specialMessages.length)];
             }
         }
 
