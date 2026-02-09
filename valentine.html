@@ -352,13 +352,16 @@
             noBtn.style.zIndex = '100';
         }
 
-        // Make the No button move when user tries to click it
+        // Make the No button move when user tries to click/tap it
         noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveButton();
+        }, { passive: false });
         noBtn.addEventListener('click', (e) => {
             e.preventDefault();
             moveButton();
         });
-        noBtn.addEventListener('touchstart', moveButton, { passive: true });
 
         function moveButton() {
             const buttonWidth = 100;
